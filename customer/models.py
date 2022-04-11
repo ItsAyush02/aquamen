@@ -5,7 +5,7 @@ class SupplierList(models.Model):
     name = models.CharField(max_length=100)
     price = models.DecimalField(max_digits=5, decimal_places=2)
     contact = models.IntegerField()
-    address = models.TextField(max_length=400, default="")
+    details = models.TextField(max_length=400, default="")
 
     def __str__(self):
         return self.name
