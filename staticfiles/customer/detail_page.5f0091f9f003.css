@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+html {
+  font-family: Poppins;
+}
+
+body {
+    background-image: linear-gradient(180deg, #eee, #fff 100px, #fff);
+  }
+ 
+  
+.description {
+    display: flex;
+    padding: 2rem;
+}
+
+.container {
+    margin-top: 2rem;
+    margin-left: 25vw;
+    max-width: 960px;
+  }
+  
+.pricing-header {
+    max-width: 700px;
+  }
+
+
