@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Supplier List{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'customer/list.css' %}"
+{% endblock css %}
+
+
+{% block content %}
+<h1>Location Search</h1>
+<section class="list-zone">
+    
+    <div class="search-container">
+        
+        <div class="search">
+          <input type="text" id="zip-code-input" placeholder="Enter Pin Code" />
+          {% comment %} <i class="search" onclick="searchStores()"></i> {% endcomment %}
+        </div>
+      </div>
+
+    <div class="grid=wrapper">
+        {% for list in list_page %}
+        <ul>
+            <div class="box zone">
+            <li>
+                <h2>{{ list.name | capfirst}}</h2>
+                <p>Price: {{ list.price }}</p>
+                <p>Contact: {{ list.contact }}</p>
+                <p>Address: {{ list.address }}</p>
+                <a href="{% url 'list-detail' list.pk %}"><button type="button" class="btn btn-warning">Get Subscription</button></a>
+            </li>        
+        </div>
+        </ul>
+        {% endfor %}
+    </div>  
+    </section>
+
+    <script>
+        alert("AquaMen is currently working in indore only");
+    </script>
+{% endblock content %}

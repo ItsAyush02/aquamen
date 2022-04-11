@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="jumbotron text-center">
+    <h1 class="display-3">Thank You for choosing us!</h1>
+    <p class="lead"><h3>Sit back and relax! Our executives will reach out to you soon and your subscription will be activated after verification.</h3></p>
+    <hr>
+    <p>
+      Having trouble? <a href="{% url 'contact' %}">Contact us</a>
+    </p>
+    <p class="lead">
+      <a class="btn btn-primary btn-sm" href="{% url 'index' %}" role="button">Continue to homepage</a>
+    </p>
+  </div>
+{% endblock content %}

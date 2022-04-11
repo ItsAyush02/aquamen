@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <main>
+        <div class="py-5 text-center">
+          <img class="d-block mx-auto mb-4" src="{% static 'customer/images/AquaMen logo3.jpg' %}" alt="" width="72" height="80">
+          <h2>Checkout</h2>
+        </div>
+    
+        
+    <form method="POST" action="">
+        {% csrf_token %}
+          <div class="col-md-7 col-lg-8">
+            <h4 class="mb-3">Billing address</h4>
+            <form class="needs-validation" novalidate="">
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <label for="firstName" class="form-label">First name</label>
+                  <input type="text" class="form-control" name="firstName" placeholder="" value="" required="">
+                  <div class="invalid-feedback">
+                    Valid first name is required.
+                  </div>
+                </div>
+    
+                <div class="col-sm-6">
+                  <label for="lastName" class="form-label">Last name</label>
+                  <input type="text" class="form-control" name="lastName" placeholder="" value="" required="">
+                  <div class="invalid-feedback">
+                    Valid last name is required.
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <label for="number" class="form-label">Phone Number</label>
+                  <input type="number" class="form-control" name="number" placeholder="" value="" required="">
+                  <div class="invalid-feedback">
+                    Valid Phone Number is required.
+                  </div>
+                </div>
+    
+    
+                <div class="col-12">
+                  <label for="email" class="form-label">Email <span class="text-muted"></span></label>
+                  <input type="email" class="form-control" name="email" placeholder="you@example.com" required="">
+                  <div class="invalid-feedback">
+                    Please enter a valid email address for shipping updates.
+                  </div>
+                </div>
+
+                <div class="col-12">
+                    <label for="quantity" class="form-label">Quantity</label>
+                    <select class="form-select" name="quantity" required="">
+                      <option value="">Choose quantity of cans</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                </div>
+    
+                <div class="col-12">
+                  <label for="address" class="form-label">Address</label>
+                  <input type="text" class="form-control" name="address" placeholder="1234 Main St" required="">
+                  <div class="invalid-feedback">
+                    Please enter your shipping address.
+                  </div>
+                </div>
+    
+                <div class="col-12">
+                  <label for="address2" class="form-label">Address 2 <span class="text-muted">(Optional)</span></label>
+                  <input type="text" class="form-control" name="address2" placeholder="Apartment or suite">
+                </div>
+    
+                <div class="col-md-5">
+                  <label for="country" class="form-label">Country</label>
+                  <select class="form-select" name="country" required="">
+                    <option value="">Choose...</option>
+                    <option>India</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Please select a valid country.
+                  </div>
+                </div>
+    
+                <div class="col-md-4">
+                  <label for="state" class="form-label">State</label>
+                  <select class="form-select" name="state" required="">
+                    <option value="">Choose...</option>
+                    <option>Madhya Pradesh</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Please provide a valid state.
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <label for="city" class="form-label">City</label>
+                  <select class="form-select" name="city" required="">
+                    <option value="">Choose...</option>
+                    <option>Indore</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Please provide a valid city.
+                  </div>
+                </div>
+    
+                <div class="col-md-3">
+                  <label for="zip" class="form-label">Zip</label>
+                  <input type="text" class="form-control" name="zip" placeholder="" required="" minlength="6">
+                  <div class="invalid-feedback">
+                    Zip code required.
+                  </div>
+                </div>
+              </div>
+    
+              <hr class="my-4">
+    
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="same-address">
+                <label class="form-check-label" for="same-address">Shipping address is the same as my billing address</label>
+              </div>
+    
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="save-info">
+                <label class="form-check-label" for="save-info">Save this information for next time</label>
+              </div>
+              <a href=""><button class="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button></a>
+            </form>
+          </div>
+        </div>
+      </main>
+</div>  
+<script>
+  {% if thank %}
+    {% comment %} alert("Thankyou! for choosing us. Our executives will contact you soon and your subscription will be activated afterwards."); {% endcomment %}
+    document.location = "/thanks";
+  {% endif %}
+</script>
+{% endblock content %}

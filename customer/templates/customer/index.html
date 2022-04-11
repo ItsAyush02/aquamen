@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}AquaMen{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'customer/index.css' %}">
+{% endblock css %}
+
+
+{% block content %}
+
+{% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <strong>Message:</strong> {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+ {% endfor %}
+
+<div class="container">
+	<div class="logo"><img src="{% static 'customer/images/AquaMen logo3.jpg' %}" width="400" height="500" class="floatRight">
+	</div>
+	<div class="head1">
+
+		<h1><strong>AquaMen</strong></h1>
+
+		<a href="{% url 'locate' %}"><button class="btn btn-primary btn-xl">Find a supplier</button>
+		</a>
+	</div>
+</div>
+
+<div class="box2">
+    <div class="about-us"><h2>About Us</h2></div>
+
+    <div class="text"><p>We have pledged to provide drinking water to everyone without any hassle. We are here to make sure that
+        <br>you don't have to face issues related to drinking water ever again. 
+    </p></div>
+
+    <div class="gallery-box">
+        <div class="title"><h2>Gallery</h2></div>
+
+        <div class="image-box">
+            <div class="box image1"><img src="{% static 'customer/images/GI-1.jpg' %}" width="700px" height="700px"></div>
+            <div class="box image2"><img src="{% static 'customer/images/GI-2.jpg' %}" width="700px" height="700px"></div>
+            <div class="box image3"><img src="{% static 'customer/images/GI-3.jpg' %}" width="700px" height="700px"></div>
+    </div>		
+</div>
+{% endblock content %}

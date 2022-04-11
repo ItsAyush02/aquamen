@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'customer/detail_page.css' %}"
+{% endblock css %}
+
+
+
+{% block content %}
+<section class="description">
+    <div id="details">
+        <h1>{{ list_detail.name | capfirst }}</h1>
+        <div id="price">
+            <h2> Price : {{ list_detail.price }}</h2>
+        </div>
+        <div id="contact">
+            <h3> Contact : {{ list_detail.contact }}</h3>
+        </div>
+        <div id="address">
+            <h3> Address : {{ list_detail.address }}</h3>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+<main>
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">Order for once</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">Rs. {{ list_detail.price }}<small class="text-muted fw-light">/can</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Delivery charges may apply</li>
+              <li>RO purified water</li>
+              <li>Pre-Paid only</li>
+              <li>Discounts NOT applicable</li>
+            </ul>
+            <a href=""><button type="button" class="w-100 btn btn-lg btn-outline-primary">Checkout</button></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">Monthly Subscription</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">Rs. {{ list_detail.price }}<small class="text-muted fw-light">/can</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>No delivery charges</li>
+              <li>Post-paid subscription only</li>
+              <li>RO purified water</li>
+              <li>Discounts applicable</li>
+            </ul>
+            <a href="{% url 'checkout' %}"><button type="button" class="w-100 btn btn-lg btn-primary">Checkout</button></a>
+          </div>
+        </div>
+      </div>
+  </main>
+</div>
+
+{% endblock content %}
