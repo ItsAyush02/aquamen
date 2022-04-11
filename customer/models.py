@@ -1,5 +1,3 @@
-from pickle import TRUE
-from tkinter import ON
 from django.db import models
 from django.urls import reverse
 

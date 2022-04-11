@@ -4,11 +4,10 @@ from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from django.views import View
 from django.views.generic import ListView, DetailView, CreateView
-from .models import SupplierList
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
-from .models import Orders
+from .models import Orders, SupplierList
 
 class Index(View):
     def get(self, request, *args, **kwargs):
