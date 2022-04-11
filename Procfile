@@ -1,1 +1,1 @@
-web:gunicorn aquamen.wsgi --log-file
+web: gunicorn aquamen.wsgi --log-file
